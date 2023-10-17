@@ -1,0 +1,52 @@
+@import '../Global.scss';
+.dashboard{
+   padding-left: 330px !important;
+  min-height: 100vh;
+    width: 100%;
+    padding:1% 3% ;
+    @include flex(flex-start,flex-start,column);
+  gap:20px;
+  @include SmallScreenDevice{
+       padding-left: 300px !important;
+  }
+  @include TabletDevice{
+    padding-left: 110px !important;
+  }
+  @include MobileDevice{
+    padding:3% ;
+  }
+
+    .section2{
+     width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+      @include SmallScreenDevice{
+      }
+      @include TabletDevice{
+        grid-template-columns: repeat(2,1fr);
+      }
+      @include MobileDevice{
+        grid-template-columns: repeat(1,1fr);
+
+      }
+    }
+    .section3{
+     min-height: 270px;
+      width: 100%;
+     @include flex(flex-start,center,row);
+      gap: 20px;
+      @include SmallScreenDevice{
+     
+      }
+      @include TabletDevice{
+     
+      }
+      
+      @include MobileDevice{
+        flex-direction: column;
+      height: auto;
+      width: 100% !important;
+      }
+    }
+}

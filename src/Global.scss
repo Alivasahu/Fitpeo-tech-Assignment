@@ -1,0 +1,31 @@
+$font-color:#918a8a;
+$bg-color: aliceblue;
+$mobile:600px;
+$smallscreen:1300px;
+$tablet:1000px;
+@mixin flex($justify, $align,$direction){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    
+}
+@mixin SmallScreenDevice{
+    @media (max-width:#{$smallscreen}) {
+        @content;
+    }
+}
+@mixin TabletDevice{
+    @media (max-width:#{$tablet}) {
+        @content;
+    }
+}
+@mixin MobileDevice{
+    @media (max-width:#{$mobile}) {
+        @content;
+    }
+}
+h3{
+    font-size: 1.2rem;
+}
+

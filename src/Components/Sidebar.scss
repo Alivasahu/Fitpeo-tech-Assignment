@@ -1,0 +1,166 @@
+@import '../Global.scss';
+
+.sidebar {
+    width: 280px;
+    padding: 30px 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(4, 4, 137);
+    transition: width 0.4s ease-in;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+
+    @include TabletDevice {
+        width: 90px;
+        span {
+            opacity: 0;
+
+        }
+       .list::after{
+         opacity: 0;
+       }
+
+        .last-section {
+            justify-content: space-between !important;
+        }
+
+        &:hover {
+            width: 280px;
+
+            ul {
+                .list::after{
+                    opacity: 1;
+                }
+                .list.active {
+                    width: 220px;
+                    margin-left: 0;
+                }
+            }
+
+            span {
+                opacity: 1;
+            }
+
+            .last-section {
+                width: 220px;
+                justify-content: space-between;
+            }
+        }
+
+    }
+
+    .icon {
+        width: 70px;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    h2 {
+        width: 250px;
+        font-size: 1.3rem;
+        @include flex(initial, center, row);
+
+        .icon {
+
+            font-size: 1.5rem;
+        }
+
+        span {
+            font-size: 1.2rem;
+
+            @include TabletDevice {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    ul {
+        margin-top: 15px;
+        @include flex (center, flex-start, column);
+
+        gap: 15px;
+        padding: 30px 0px;
+
+        .list {
+            padding: 7px 0px;
+            width: 220px;
+            justify-content: flex-start;
+            font-size: 0.68rem;
+            display: flex;
+            gap: 10px;
+            position: relative;
+
+            span {
+                position: absolute;
+                left: 70px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &.active {
+                border-radius: 7px;
+                background-color: rgba(240, 248, 255, 0.5);
+
+                @include TabletDevice {
+                    width: 50px;
+                    margin-left: 10px;
+                }
+
+                &::after {
+                    content: "";
+                }
+            }
+
+            &::after {
+                content: "\2192";
+                position: absolute;
+                top: 50%;
+                right: 0%;
+                transform: translateY(-50%);
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .last-section {
+        width: 220px;
+        height: 60px;
+        @include flex(space-evenly, center, row);
+
+        gap: 20px;
+        padding: 10px 10px;
+        border-radius: 7px;
+        background-color: rgba(240, 248, 255, 0.5);
+        position: absolute;
+        bottom: 5%;
+        left: 25px;
+        overflow: hidden;
+
+        @include TabletDevice {
+            width: 55px;
+        }
+
+        img {
+            width: 50px;
+            height: 100%;
+        }
+
+        .content {
+
+
+            h6 {
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 0.79rem;
+            }
+        }
+    }
+}

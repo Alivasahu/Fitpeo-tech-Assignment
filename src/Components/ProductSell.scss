@@ -1,0 +1,88 @@
+@import '../Global.scss';
+
+.productsell{
+    width: 100%;
+    background-color: #{$bg-color};
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    @include flex(flex-start, center, column);
+    gap: 10px;
+    @include TabletDevice {
+        width: 100%;
+        height: 100%;
+    }
+    h3{
+       @include MobileDevice{
+        font-size: 1rem;
+       }
+    }
+    .products-table {
+        width: 100%;
+        height: 100%;
+        @include TabletDevice {
+            overflow-x: scroll;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+
+    .top-section {
+        @include flex(space-between, center, row);
+        width: 100%;
+
+        .corner {
+            @include flex(center, center, row);
+            gap: 20px;
+            @include MobileDevice{
+                gap: 10px;
+            }
+
+            select {
+                padding: 10px 20px;
+                border: none;
+                @include MobileDevice{
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+    table {
+        tr {
+            td {
+                .product-detail {
+                    @include flex(flex-start, center, row);
+                    gap: 10px;
+
+                    h3 {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    hr {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+td:first-child,
+th:first-child {
+    width: 68%;
+}
+
+td,
+th {
+    width: 12%;
+    padding: 10px;
+}
+
+img {
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+}

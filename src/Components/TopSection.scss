@@ -1,0 +1,48 @@
+@import '../Global.scss';
+.topsection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    h1{
+        font-size: 1.2rem;
+        @include MobileDevice{
+            font-size: 1rem;
+           }
+    }
+    @include SmallScreenDevice{
+        
+   }
+   @include TabletDevice{
+  
+   }
+   @include MobileDevice{
+    gap: 20px;
+   }
+}
+.search-box{
+    position: relative;
+    @include MobileDevice{
+        width: 50% !important;
+       }
+    .input{
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+        padding-left: 40px;
+        s
+        &::placeholder{
+            color: #{$font-color};
+        }
+    }
+    .icon{
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        color: #{$font-color};
+    }
+
+}

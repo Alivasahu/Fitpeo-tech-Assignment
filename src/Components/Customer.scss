@@ -1,0 +1,48 @@
+@import '../Global.scss';
+.customer{
+    height:270px;
+     width: 270px;
+    background-color: #{$bg-color};
+    flex: 30%;
+    border-radius: 10px;
+    padding: 20px;
+    @include flex(flex-start,flex-start,column);
+    gap: 10px;
+    @include SmallScreenDevice{
+     
+    }
+    @include TabletDevice{
+      flex: 100% !important;
+      
+    }
+    @include MobileDevice{
+        flex: 100% !important;
+        width: 100%;
+        
+}
+    .circle{
+        width: 100%;
+        height: 50%;
+        text-align: center;
+        position: relative;
+        @include MobileDevice{
+            width: 50%;
+            height: 50%;
+            
+    }
+        .icon{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+            h3{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        
+    }
+    
+}
